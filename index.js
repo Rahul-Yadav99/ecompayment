@@ -9,7 +9,7 @@ const instance = new Razorpay({
     key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
 })
 
-app.listen(8080)
+app.listen('https://ecompayment.vercel.app/order')
 app.use(cors())
 app.use(body.urlencoded({extended : false}))
 app.use(body.json())
