@@ -10,7 +10,6 @@ const instance = new Razorpay({
     key_secret: process.env.env.API_SECRET
 })
 
-app.listen('https://ecompayment.vercel.app/order')
 app.use(cors())
 app.use(body.urlencoded({ extended: false }))
 app.use(body.json())
@@ -21,7 +20,7 @@ app.post('/order', async (req, res) => {
             amount: (req.body.amount * 100),
             currency: "INR",
             receipt: "CO_RP" + Date.now(),
-
+            
         })
         res.json({
             amount: newOrder.amount,
@@ -40,3 +39,4 @@ app.get('/payments', async (req, res) => {
         res.status(500).json(error)
     }
 })
+app.listen('https://ecompayment.vercel.app/order')
