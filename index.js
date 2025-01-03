@@ -2,11 +2,12 @@ const express = require('express')
 const cors = require('cors')
 const body = require('body-parser')
 const app = express()
+require('dotenv').config();
 const Razorpay = require("razorpay")
 
 const instance = new Razorpay({
-    key_id: 'rzp_test_W1As5WgUmla9nV',
-    key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
+    key_id: process.env.RAZORPAY_API_KEY,
+    key_secret: process.env.RAZORPAY_API_SECRET
 })
 
 app.listen('https://ecompayment.vercel.app/order')
