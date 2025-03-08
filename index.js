@@ -1,13 +1,14 @@
+require('dotenv').config();
 const express = require('express')
 const cors = require('cors')
 const body = require('body-parser')
 const app = express()
-const Razorpay = require("razorpay")
-require('dotenv').config();
+const Razorpay = require("razorpay");
+const { API_KEY, API_SECRET } = require('./constant');
 
 const instance = new Razorpay({
-    key_id: 'rzp_test_W1As5WgUmla9nV',
-    key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
+    key_id: API_KEY,
+    key_secret: API_SECRET
 })
 
 app.use(cors())
