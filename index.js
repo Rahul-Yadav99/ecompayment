@@ -7,8 +7,8 @@ const Razorpay = require("razorpay");
 const { API_KEY, API_SECRET } = require('./constant');
 
 const instance = new Razorpay({
-    key_id: API_KEY,
-    key_secret: API_SECRET
+    key_id: 'rzp_test_W1As5WgUmla9nV',
+    key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
 })
 
 app.use(cors())
