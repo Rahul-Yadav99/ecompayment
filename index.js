@@ -6,8 +6,8 @@ const Razorpay = require("razorpay")
 require('dotenv').config();
 
 const instance = new Razorpay({
-    key_id: 'rzp_test_W1As5WgUmla9nV',
-    key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
+    key_id: process.env.API_KEY,
+    key_secret: process.env.API_SECRET
 })
 
 app.use(cors())
@@ -20,7 +20,7 @@ app.post('/order', async (req, res) => {
             amount: (req.body.amount * 100),
             currency: "INR",
             receipt: "CO_RP" + Date.now(),
-            
+
         })
         res.json({
             amount: newOrder.amount,
