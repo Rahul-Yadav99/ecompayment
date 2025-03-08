@@ -6,8 +6,8 @@ const app = express()
 const Razorpay = require("razorpay");
 
 const instance = new Razorpay({
-    key_id: process.env.API_KEY,
-    key_secret: process.env.API_SECRET
+    key_id: 'rzp_test_W1As5WgUmla9nV',
+    key_secret: 'R0HPzLmlfXMfXQVHs0wU4nNY'
 })
 
 app.use(cors())
